@@ -28,18 +28,20 @@ function Home(){
                 <div>
                     <h1>Bonjour {user.userInfos.firstName}</h1>
                 </div>
-                <article>
-                    <Chart perf={userPerf} />
-                </article>
-                <article>
-                    <BarCharts activity={userActivity} />
-                </article>
-                <article>
-                    <LineCharts avgSession={userAvgSession} />
-                </article>
-                <article>
-                    <RadialBarCharts />
-                </article>
+                <div className='Chart'>
+                    <article className='Chart'>
+                        <BarCharts activity={userActivity} />
+                    </article>
+                    <article>
+                        <Chart perf={userPerf} />
+                    </article>
+                    <article>
+                        <LineCharts avgSession={userAvgSession} />
+                    </article>
+                    <article>
+                        <RadialBarCharts />
+                    </article>
+                </div>
             </section>
         </main>
         )
