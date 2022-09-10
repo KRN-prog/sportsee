@@ -29,10 +29,10 @@ function BarCharts( userActivity ) {
   return (
     <ResponsiveContainer width="100%">
       <BarChart data={data} >
-        <CartesianGrid strokeDasharray="3 3" />
+        <CartesianGrid vertical={false} strokeDasharray="1" />
         <XAxis dataKey="name" tickLine={false} dy={15}/>
         <YAxis orientation="right" axisLine={false} tickLine={false} dx={15} />
-        <Tooltip />
+        <Tooltip/>
         <Legend verticalAlign="top" align="end" height={50} margin={{ top: 0, left: 0, right: 50, bottom: 0 }} content={renderLegend}/>
         <Bar dataKey="Poids" fill="#282D30" barSize={10} radius={[100, 100, 0, 0]}/>
         <Bar dataKey="Calories" fill="#E60000" barSize={10} radius={[100, 100, 0, 0]}/>
