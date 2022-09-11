@@ -1,5 +1,5 @@
 import React from "react";
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts";
+import { ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts";
 
 function Chart( userPerfData ) {
   const data =
@@ -12,11 +12,13 @@ function Chart( userPerfData ) {
     }
   ))
   return (
-    <RadarChart cx={300} cy={250} outerRadius={150} width={500} height={500} data={data}>
-      <PolarGrid />
-      <PolarAngleAxis dataKey="subject" />
-      <Radar /*name="Mike"*/ dataKey="A" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.6} />
-    </RadarChart>
+    <ResponsiveContainer width="30%" height={263} className="radarBox">
+      <RadarChart data={data}>
+        <PolarGrid />
+        <PolarAngleAxis dataKey="subject" tick={{fill: '#fff'}} />
+        <Radar /*name="Mike"*/ dataKey="A" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.6} />
+      </RadarChart>
+    </ResponsiveContainer>
   );
 }
 

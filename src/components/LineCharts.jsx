@@ -1,6 +1,14 @@
 import React from "react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 
+const renderLegend = (props) => {
+  console.log(props.payload)
+  return (
+    <div className="ChartText">
+      <span className="ChartText__title">Durée moyenne des sessions</span>
+    </div>
+  );
+}
 function LineCharts( userAvgSession ) {
   const data =
   userAvgSession.avgSession.sessions.map(donnees => (
@@ -10,28 +18,15 @@ function LineCharts( userAvgSession ) {
     }
   ))
   return (
-    <LineChart
-      width={500}
-      height={300}
-      data={data}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Line
-        type="monotone"
-        dataKey="sessionLength"
-        stroke="#8884d8"
-        activeDot={{ r: 8 }}
-      />
-    </LineChart>
+    <ResponsiveContainer width="30%" height={263} className="bgLines">
+      <LineChart data={data}>
+        <CartesianGrid vertical={false} horizontal={false} />
+        <XAxis dataKey="name" axisLine={false} tick={{fill: '#fff'}} tickLine={false}/>
+        <Tooltip />
+        <Legend verticalAlign="top" align="end" content={renderLegend}/>
+        <Line type="monotone" dataKey="sessionLength" stroke="#fff"/>
+      </LineChart>
+    </ResponsiveContainer>
   );
 }
 

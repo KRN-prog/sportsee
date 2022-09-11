@@ -26,17 +26,15 @@ function Home(){
             </section>
             <section className='mainSection'>
                 <div>
-                    <h1>Bonjour {user.userInfos.firstName}</h1>
+                    <h1 className='mainSection__heading'>Bonjour <span className='mainSection__heading--red'>{user.userInfos.firstName}</span></h1>
                 </div>
-                <div className='Chart'>
+                <div>
                     <article className='Chart'>
                         <BarCharts activity={userActivity} />
                     </article>
-                    <article>
-                        <Chart perf={userPerf} />
-                    </article>
-                    <article>
+                    <article className='Chart'>
                         <LineCharts avgSession={userAvgSession} />
+                        <Chart perf={userPerf} />
                     </article>
                     <article>
                         <RadialBarCharts />
