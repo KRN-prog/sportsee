@@ -1,5 +1,5 @@
 import React from "react";
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import { ResponsiveContainer, LineChart, Line, XAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 
 const renderLegend = (props) => {
   console.log(props.payload)

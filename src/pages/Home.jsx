@@ -14,9 +14,14 @@ function Home(){
     GetData(setUser, setUserActivity, setUserAvgSession, setUserPerf, setLoading)
     console.log(user)
     //console.log(userActivity)
-    console.log(userAvgSession)
+    //console.log(userAvgSession)
     //console.log(userPerf)
     //console.log(loading)
+    /*if (user.score) {
+        setUserScore(user.score)
+    }else if(user.todayScore){
+        setUserScore(user.todayScore)
+    }*/
     return(loading ? null
         :
         (
@@ -35,9 +40,7 @@ function Home(){
                     <article className='Chart'>
                         <LineCharts avgSession={userAvgSession} />
                         <Chart perf={userPerf} />
-                    </article>
-                    <article>
-                        <RadialBarCharts />
+                        <RadialBarCharts score={user.score}/>
                     </article>
                 </div>
             </section>

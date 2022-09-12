@@ -1,48 +1,41 @@
 import React from "react";
-import { RadialBarChart, RadialBar, Legend } from "recharts";
+import { ResponsiveContainer, RadialBarChart, RadialBar, Legend } from "recharts";
 
-const data = [
+/*const data = [
   {
-    name: "7",
-    uv: 10,
-    pv: 10,
+    name: "18-24",
+    score: 15,
     fill: "#8884d8"
+  },
+  {
+    name: "25-29",
+    score: 26,
+    fill: "#83a6ed"
   }
-];
+]*/
 
-const style = {
-  top: 0,
-  left: 350,
-  lineHeight: "24px"
-};
-
-export default function App() {
+function RadialChart( score ) {
+  let getScore = score.score.toString()
+  let resizeScore = getScore.split('.')
+  const data = [
+    {
+      name: "today",
+      score: resizeScore,
+      fill: "red"
+    },
+    {
+      name: "25-29",
+      score: 100,
+      fill: "red"
+    }
+  ]
   return (
-    <RadialBarChart
-      width={500}
-      height={300}
-      cx={150}
-      cy={150}
-      innerRadius={20}
-      outerRadius={140}
-      barSize={10}
-      data={data}
-    >
-      <RadialBar
-        minAngle={15}
-        label={{ position: "insideStart", fill: "#fff" }}
-        background
-        clockWise
-        dataKey="uv"
-      />
-      <Legend
-        iconSize={10}
-        width={120}
-        height={140}
-        layout="vertical"
-        verticalAlign="middle"
-        wrapperStyle={style}
-      />
-    </RadialBarChart>
+    <ResponsiveContainer width="30%" height={263}>
+      <RadialBarChart innerRadius={100} outerRadius={340} startAngle={90} endAngle={450} barSize={15} data={data}>
+        <RadialBar label={{ position: "center", fill: "#000" }} dataKey="score"/>
+      </RadialBarChart>
+    </ResponsiveContainer>
   );
 }
+
+export default RadialChart
