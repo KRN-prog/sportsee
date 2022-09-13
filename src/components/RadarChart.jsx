@@ -12,7 +12,7 @@ function Chart( userPerfData ) {
     }
   ))
   return (
-    <ResponsiveContainer width="30%" height={263} className="radarBox">
+    <ResponsiveContainer width="25%" height={263} className="radarBox">
       <RadarChart data={data}>
         <PolarGrid />
         <PolarAngleAxis dataKey="subject" tick={{fill: '#fff'}} />

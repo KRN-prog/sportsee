@@ -5,6 +5,8 @@ import Chart from '../components/RadarChart'
 import BarCharts from '../components/BarCharts'
 import LineCharts from '../components/LineCharts'
 import RadialBarCharts from '../components/RadialBarCharts'
+
+import Recap from '../components/Recap'
 function Home(){
     const [loading, setLoading] = useState(true)
     const [user, setUser] = useState([])
@@ -13,15 +15,6 @@ function Home(){
     const [userPerf, setUserPerf] = useState([])
     GetData(setUser, setUserActivity, setUserAvgSession, setUserPerf, setLoading)
     console.log(user)
-    //console.log(userActivity)
-    //console.log(userAvgSession)
-    //console.log(userPerf)
-    //console.log(loading)
-    /*if (user.score) {
-        setUserScore(user.score)
-    }else if(user.todayScore){
-        setUserScore(user.todayScore)
-    }*/
     return(loading ? null
         :
         (
@@ -29,10 +22,10 @@ function Home(){
             <section className="sideSection">
                 <Sidebar />
             </section>
+            <div className='greeting'>
+                <h1 className='mainSection__heading'>Bonjour <span className='mainSection__heading--red'>{user.userInfos.firstName}</span></h1>
+            </div>
             <section className='mainSection'>
-                <div>
-                    <h1 className='mainSection__heading'>Bonjour <span className='mainSection__heading--red'>{user.userInfos.firstName}</span></h1>
-                </div>
                 <div>
                     <article className='Chart'>
                         <BarCharts activity={userActivity} />
@@ -42,6 +35,11 @@ function Home(){
                         <Chart perf={userPerf} />
                         <RadialBarCharts score={user.score}/>
                     </article>
+                </div>
+            </section>
+            <section className='sectionRight'>
+                <div>
+                    <article><Recap img="../assets/icon/fire.png" value={user.keyData} color="#000" /></article>
                 </div>
             </section>
         </main>

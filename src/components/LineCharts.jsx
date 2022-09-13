@@ -18,7 +18,7 @@ function LineCharts( userAvgSession ) {
     }
   ))
   return (
-    <ResponsiveContainer width="30%" height={263} className="bgLines">
+    <ResponsiveContainer width="25%" height={263} className="bgLines">
       <LineChart data={data}>
         <CartesianGrid vertical={false} horizontal={false} />
         <XAxis dataKey="name" axisLine={false} tick={{fill: '#fff'}} tickLine={false}/>
