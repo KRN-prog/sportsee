@@ -5,8 +5,12 @@ import Chart from '../components/RadarChart'
 import BarCharts from '../components/BarCharts'
 import LineCharts from '../components/LineCharts'
 import RadialBarCharts from '../components/RadialBarCharts'
-
 import Recap from '../components/Recap'
+
+import fireIcon from '../assets/icon/fire.png'
+import chikenWingsIcon from '../assets/icon/chiken_wing.png'
+import appleIcon from '../assets/icon/apple.png'
+import cheeseburgerIcon from '../assets/icon/cheeseburger.png'
 function Home(){
     const [loading, setLoading] = useState(true)
     const [user, setUser] = useState([])
@@ -39,7 +43,10 @@ function Home(){
             </section>
             <section className='sectionRight'>
                 <div>
-                    <article><Recap img="../assets/icon/fire.png" value={user.keyData} color="#000" /></article>
+                    <Recap img={fireIcon} altImg="fireIcon" categorie="Calories" value={user.keyData.calorieCount} uniteMesure="Kcal" color="#000" />
+                    <Recap img={chikenWingsIcon} altImg="chikenWingsIcon" categorie="Proteines" value={user.keyData.proteinCount} uniteMesure="g" color="#000" />
+                    <Recap img={appleIcon} altImg="appleIcon" categorie="Glucides" value={user.keyData.carbohydrateCount} uniteMesure="g" color="#000" />
+                    <Recap img={cheeseburgerIcon} altImg="cheeseburgerIcon" categorie="Lipides" value={user.keyData.lipidCount} uniteMesure="g" color="#000" />
                 </div>
             </section>
         </main>
