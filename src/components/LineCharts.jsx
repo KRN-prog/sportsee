@@ -4,10 +4,18 @@ import { ResponsiveContainer, LineChart, Line, XAxis, CartesianGrid, Tooltip, Le
 const renderLegend = (props) => {
   console.log(props.payload)
   return (
-    <div className="ChartText">
-      <span className="ChartText__title">Durée moyenne des sessions</span>
+    <div className="lineChartText">
+      <span className="lineChartText__title">Durée moyenne des sessions</span>
     </div>
   );
+}
+function CustomToolTip({ active, payload }) {
+  if(active){
+    return(
+      <div className="tooltipLine">{payload[0].payload.sessionLength} min</div>
+    )
+  }
+  return null
 }
 function LineCharts( userAvgSession ) {
   const data =
@@ -18,13 +26,13 @@ function LineCharts( userAvgSession ) {
     }
   ))
   return (
-    <ResponsiveContainer width="25%" height={263} className="bgLines">
+    <ResponsiveContainer width="30%" height={263} className="bgLines">
       <LineChart data={data}>
         <CartesianGrid vertical={false} horizontal={false} />
         <XAxis dataKey="name" axisLine={false} tick={{fill: '#fff'}} tickLine={false}/>
-        <Tooltip />
+        <Tooltip content={<CustomToolTip  />}/>
         <Legend verticalAlign="top" align="end" content={renderLegend}/>
-        <Line type="monotone" dataKey="sessionLength" stroke="#fff"/>
+        <Line type="monotone" dataKey="sessionLength" stroke="#fff" dot={false}/>
       </LineChart>
     </ResponsiveContainer>
   );

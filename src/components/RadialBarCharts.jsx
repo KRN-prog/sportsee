@@ -30,7 +30,7 @@ function RadialChart( score ) {
     }
   ]
   return (
-    <ResponsiveContainer width="25%" height={263}>
+    <ResponsiveContainer width="30%" height={263}>
       <RadialBarChart innerRadius={100} outerRadius={340} startAngle={90} endAngle={450} barSize={15} data={data}>
         <RadialBar label={{ position: "center", fill: "#000" }} dataKey="score"/>
       </RadialBarChart>

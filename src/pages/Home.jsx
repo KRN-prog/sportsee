@@ -42,12 +42,10 @@ function Home(){
                 </div>
             </section>
             <section className='sectionRight'>
-                <div>
-                    <Recap img={fireIcon} altImg="fireIcon" categorie="Calories" value={user.keyData.calorieCount} uniteMesure="Kcal" color="#000" />
-                    <Recap img={chikenWingsIcon} altImg="chikenWingsIcon" categorie="Proteines" value={user.keyData.proteinCount} uniteMesure="g" color="#000" />
-                    <Recap img={appleIcon} altImg="appleIcon" categorie="Glucides" value={user.keyData.carbohydrateCount} uniteMesure="g" color="#000" />
-                    <Recap img={cheeseburgerIcon} altImg="cheeseburgerIcon" categorie="Lipides" value={user.keyData.lipidCount} uniteMesure="g" color="#000" />
-                </div>
+                <Recap img={fireIcon} altImg="fireIcon" categorie="Calories" value={user.keyData.calorieCount} uniteMesure="Kcal" color="redPastel" />
+                <Recap img={chikenWingsIcon} altImg="chikenWingsIcon" categorie="Proteines" value={user.keyData.proteinCount} uniteMesure="g" color="bluePastel" />
+                <Recap img={appleIcon} altImg="appleIcon" categorie="Glucides" value={user.keyData.carbohydrateCount} uniteMesure="g" color="yellowPastel" />
+                <Recap img={cheeseburgerIcon} altImg="cheeseburgerIcon" categorie="Lipides" value={user.keyData.lipidCount} uniteMesure="g" color="pinkPastel" />
             </section>
         </main>
         )
