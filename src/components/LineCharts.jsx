@@ -18,19 +18,20 @@ function CustomToolTip({ active, payload }) {
   return null
 }
 function LineCharts( userAvgSession ) {
+  const day = ['L','M','M','J','V','S','D']
   const data =
   userAvgSession.avgSession.sessions.map(donnees => (
     {
-      name: donnees.day,
+      name: day[donnees.day - 1],
       sessionLength: donnees.sessionLength
     }
   ))
   return (
-    <ResponsiveContainer width="30%" height={263} className="bgLines">
+    <ResponsiveContainer width="25%" height={263} className="bgLines">
       <LineChart data={data}>
         <CartesianGrid vertical={false} horizontal={false} />
         <XAxis dataKey="name" axisLine={false} tick={{fill: '#fff'}} tickLine={false}/>
-        <Tooltip content={<CustomToolTip  />}/>
+        <Tooltip content={<CustomToolTip  />} cursor={false}/>
         <Legend verticalAlign="top" align="end" content={renderLegend}/>
         <Line type="monotone" dataKey="sessionLength" stroke="#fff" dot={false}/>
       </LineChart>

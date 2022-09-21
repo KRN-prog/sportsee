@@ -3,14 +3,29 @@ import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Toolti
 
 const renderLegend = (props) => {
   console.log(props.payload)
+  /*for (let i = 0; i < props.payload.length; i++) {
+    switch (props.payload[i].color) {
+      case "#282D30":
+        console.log("eeee")
+        break;
+
+
+      case "#E60000":
+        console.log("dddd")
+        break;
+    
+      default:
+        break;
+    }
+  }*/
   return (
     <div className="ChartText">
       <span className="ChartText__title">Activité quotidienne</span>
       {
         props.payload.map((entry, index) => (
-          <div>
-            <span key={`color-${index}`} >{entry.color}</span>
-            <span key={`item-${index}`}>{entry.value}</span>
+          <div className="valueBox" key={`legend-item-${index}`}>
+            <span className={"color"+entry.color.replace('#','')}></span>
+            <span>{entry.value} {entry === "Poids" ? ("(kg)") : ("(kCal)")}</span>
           </div>
         ))
       }
@@ -19,11 +34,10 @@ const renderLegend = (props) => {
 }
 function CustomToolTip({ active, payload }) {
   if(active){
-    console.log(payload)
     return(
       <React.Fragment>
         <div className="tooltipBar">{payload[0].payload.Poids}Kg</div>
-        <div className="tooltipBar">{payload[0].payload.Calories}Kg</div>
+        <div className="tooltipBar">{payload[0].payload.Calories}Kcal</div>
       </React.Fragment>
     )
   }

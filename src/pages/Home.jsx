@@ -17,7 +17,8 @@ function Home(){
     const [userActivity, setUserActivity] = useState([])
     const [userAvgSession, setUserAvgSession] = useState([])
     const [userPerf, setUserPerf] = useState([])
-    GetData(setUser, setUserActivity, setUserAvgSession, setUserPerf, setLoading)
+    const [userScore, setUserScore] = useState([])
+    GetData(setUser, setUserActivity, setUserAvgSession, setUserPerf, setLoading, setUserScore)
     console.log(user)
     return(loading ? null
         :
@@ -37,7 +38,8 @@ function Home(){
                     <article className='Chart'>
                         <LineCharts avgSession={userAvgSession} />
                         <Chart perf={userPerf} />
-                        <RadialBarCharts score={user.score}/>
+                        
+                        <RadialBarCharts score={userScore}/>
                     </article>
                 </div>
             </section>

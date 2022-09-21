@@ -12,11 +12,11 @@ function Chart( userPerfData ) {
     }
   ))
   return (
-    <ResponsiveContainer width="30%" height={263} className="radarBox">
+    <ResponsiveContainer width="25%" height={263} className="radarBox">
       <RadarChart data={data}>
-        <PolarGrid />
+        <PolarGrid gridType="polygon" polarRadius={[15, 40, 60, 80, 100]} stroke="#fff" radialLines={false}/>
         <PolarAngleAxis dataKey="subject" tick={{fill: '#fff'}} />
-        <Radar /*name="Mike"*/ dataKey="A" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.6} />
+        <Radar dataKey="A" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.6} />
       </RadarChart>
     </ResponsiveContainer>
   );

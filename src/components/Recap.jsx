@@ -2,7 +2,7 @@ function Recap( data ) {
     console.log(data.color)
     return (
         <article className="rightSideInfo">
-            <div class={`rightSideInfo__img ${data.color}`}>
+            <div className={`rightSideInfo__img ${data.color}`}>
                 <img src={data.img} alt={data.altImg} />
             </div>
             <div>

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import axios from 'axios'
-function GetData(setUser, setUserActivity, setUserAvgSession, setUserPerf, setLoading) {
+function GetData(setUser, setUserActivity, setUserAvgSession, setUserPerf, setLoading, setUserScore) {
     const fetchData = () => {
         const URL1 = 'http://localhost:4000/user/18'
         const URL2 = 'http://localhost:4000/user/18/activity'
@@ -16,6 +16,12 @@ function GetData(setUser, setUserActivity, setUserAvgSession, setUserPerf, setLo
                 const allDataActivity = allData[1].data.data
                 const allDataAVGPerf = allData[2].data.data
                 const allDataPerf = allData[3].data.data
+                console.log(allDataURL)
+                if (allDataURL.score) {
+                    setUserScore(allDataURL.score)
+                }else{
+                    setUserScore(allDataURL.todayScore)
+                }
 
                 setUser(allDataURL)
                 setUserActivity(allDataActivity)

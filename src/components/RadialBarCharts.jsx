@@ -1,41 +1,31 @@
 import React from "react";
-import { ResponsiveContainer, RadialBarChart, RadialBar, Legend } from "recharts";
-
-/*const data = [
-  {
-    name: "18-24",
-    score: 15,
-    fill: "#8884d8"
-  },
-  {
-    name: "25-29",
-    score: 26,
-    fill: "#83a6ed"
-  }
-]*/
+import { ResponsiveContainer, RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
 
 function RadialChart( score ) {
   let getScore = score.score.toString()
-  let resizeScore = getScore.split('.')
+  console.log(getScore)
+  let resizeScore = getScore * 100
   const data = [
     {
       name: "today",
       score: resizeScore,
       fill: "red"
-    },
-    {
-      name: "25-29",
-      score: 100,
-      fill: "red"
     }
   ]
+  console.log(data)
   return (
-    <ResponsiveContainer width="30%" height={263}>
-      <RadialBarChart innerRadius={100} outerRadius={340} startAngle={90} endAngle={450} barSize={15} data={data}>
-        <RadialBar label={{ position: "center", fill: "#000" }} dataKey="score"/>
+    <ResponsiveContainer width="25%">
+      <RadialBarChart cx="50%" cy="55%" width="100%" height="100%" style={{ backgroundColor: '#FBFBFB' }} margin={{ top: 20, right: 20, bottom: 20, left: 20 }} innerRadius="80%" outerRadius="80%" data={data} startAngle={210} endAngle={-30}>
+        <circle cx="50%" cy="50%" fill="#fbfbfb" r={90}></circle>
+        <PolarAngleAxis type="number" domain={[0, 100]} angleAxisId={1} tick={false}/>
+        <RadialBar background dataKey="score" angleAxisId={1} fill="#E60000" cornerRadius={10} data={data} barSize={10}/>
+        <text fontWeight="700" fontSize="1.65em" fill="#282D30" x="50%" y="51%" textAnchor="middle" >{`${data[0].score}%`}</text>
+        <text fontWeight="500" fontSize="1em" fill="#74798C" x="50%" y="60%" textAnchor="middle">de votre</text>
+        <text fontWeight="500" fontSize="1em" fill="#74798C" x="50%" y="68%" textAnchor="middle">objectif</text>
+        <text x="12%" y="17%" textAnchor="start" dominantBaseline="middle" fill="#20253A" style={{ fontWeight: 500, fontSize: '1em' }}>Score{' '}</text>
       </RadialBarChart>
     </ResponsiveContainer>
-  );
+  )
 }
 
 export default RadialChart
