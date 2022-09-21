@@ -4,6 +4,9 @@ body{
     font-family: sans-serif;
 }
 .header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -64,6 +67,7 @@ main{
 }
 .mainSection{
     flex-basis: 65%;
+    margin-top: 50px;
     &__heading{
         font-size: 48px;
         font-weight: 500;
@@ -72,6 +76,11 @@ main{
             color: #FF0000;
         }
     }
+}
+.felicitation{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
 }
 .greeting{
     flex-basis: 90%;
@@ -215,7 +224,6 @@ main{
     margin-right: 5px;
 }
 
-
-.EXEMPLE{
-    padding: 15px;
+.chartBox{
+    width: 33%;
 }

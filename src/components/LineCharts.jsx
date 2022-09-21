@@ -27,15 +27,17 @@ function LineCharts( userAvgSession ) {
     }
   ))
   return (
-    <ResponsiveContainer width="25%" height={263} className="bgLines">
-      <LineChart data={data}>
-        <CartesianGrid vertical={false} horizontal={false} />
-        <XAxis dataKey="name" axisLine={false} tick={{fill: '#fff'}} tickLine={false}/>
-        <Tooltip content={<CustomToolTip  />} cursor={false}/>
-        <Legend verticalAlign="top" align="end" content={renderLegend}/>
-        <Line type="monotone" dataKey="sessionLength" stroke="#fff" dot={false}/>
-      </LineChart>
-    </ResponsiveContainer>
+    <div className="chartBox">
+      <ResponsiveContainer width="100%" /*height={263}*/ className="bgLines">
+        <LineChart data={data}>
+          <CartesianGrid vertical={false} horizontal={false} />
+          <XAxis dataKey="name" axisLine={false} tick={{fill: '#fff'}} tickLine={false}/>
+          <Tooltip content={<CustomToolTip  />} cursor={false}/>
+          <Legend verticalAlign="top" align="end" content={renderLegend}/>
+          <Line type="monotone" dataKey="sessionLength" stroke="#fff" dot={false}/>
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
 

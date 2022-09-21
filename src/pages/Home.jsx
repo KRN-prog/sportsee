@@ -29,6 +29,7 @@ function Home(){
             </section>
             <div className='greeting'>
                 <h1 className='mainSection__heading'>Bonjour <span className='mainSection__heading--red'>{user.userInfos.firstName}</span></h1>
+                <span className='felicitation'>Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
             </div>
             <section className='mainSection'>
                 <div>
