@@ -39,7 +39,6 @@ function Home(){
                     <article className='Chart'>
                         <LineCharts avgSession={userAvgSession} />
                         <Chart perf={userPerf} />
-                        
                         <RadialBarCharts score={userScore}/>
                     </article>
                 </div>

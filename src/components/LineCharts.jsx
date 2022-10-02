@@ -1,14 +1,14 @@
 import React from "react";
-import { ResponsiveContainer, LineChart, Line, XAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import { ResponsiveContainer, LineChart, Line, XAxis, CartesianGrid, Tooltip, Legend, Rectangle } from "recharts";
 
-const renderLegend = (props) => {
-  console.log(props.payload)
+const renderLegend = () => {
   return (
     <div className="lineChartText">
       <span className="lineChartText__title">Durée moyenne des sessions</span>
     </div>
   );
 }
+
 function CustomToolTip({ active, payload }) {
   if(active){
     return(
@@ -17,6 +17,13 @@ function CustomToolTip({ active, payload }) {
   }
   return null
 }
+const CustomCursor = ({ points }) => {
+  console.log(points)
+  return (
+    <Rectangle fill="#000000" opacity={0.0975} x={points[1].x} width={1000} height={300} />
+  )
+}
+
 function LineCharts( userAvgSession ) {
   const day = ['L','M','M','J','V','S','D']
   const data =
@@ -31,10 +38,10 @@ function LineCharts( userAvgSession ) {
       <ResponsiveContainer width="100%" /*height={263}*/ className="bgLines">
         <LineChart data={data}>
           <CartesianGrid vertical={false} horizontal={false} />
-          <XAxis dataKey="name" axisLine={false} tick={{fill: '#fff'}} tickLine={false}/>
-          <Tooltip content={<CustomToolTip  />} cursor={false}/>
+          <XAxis dataKey="name" axisLine={false} background="#000" tick={{fill: '#fff'}} tickLine={false}/>
+          <Tooltip content={<CustomToolTip  />} cursor={<CustomCursor />}/>
           <Legend verticalAlign="top" align="end" content={renderLegend}/>
-          <Line type="monotone" dataKey="sessionLength" stroke="#fff" dot={false}/>
+          <Line type="natural" dataKey="sessionLength" stroke="#fff" dot={false}/>
         </LineChart>
       </ResponsiveContainer>
     </div>

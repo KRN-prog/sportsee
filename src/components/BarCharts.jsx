@@ -3,21 +3,6 @@ import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Toolti
 
 const renderLegend = (props) => {
   console.log(props.payload)
-  /*for (let i = 0; i < props.payload.length; i++) {
-    switch (props.payload[i].color) {
-      case "#282D30":
-        console.log("eeee")
-        break;
-
-
-      case "#E60000":
-        console.log("dddd")
-        break;
-    
-      default:
-        break;
-    }
-  }*/
   return (
     <div className="ChartText">
       <span className="ChartText__title">Activité quotidienne</span>
