@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Sidebar from "../components/Sidebar"
 import GetData from "../components/GetData"
 import Chart from '../components/RadarChart'
@@ -19,7 +19,6 @@ function Home(){
     const [userPerf, setUserPerf] = useState([])
     const [userScore, setUserScore] = useState([])
     GetData(setUser, setUserActivity, setUserAvgSession, setUserPerf, setLoading, setUserScore)
-    console.log(user)
     return(loading ? null
         :
         (

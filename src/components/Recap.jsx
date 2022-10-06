@@ -1,5 +1,4 @@
 function Recap( data ) {
-    console.log(data.color)
     return (
         <article className="rightSideInfo">
             <div className={`rightSideInfo__img ${data.color}`}>

@@ -230,3 +230,25 @@ main{
 .chartBox{
     width: 30%;
 }
+
+@media screen and (max-width: 1025px) {
+    .greeting{
+        flex-basis: 85%
+    }
+    .mainSection{
+        flex-basis: 85%;
+    }
+    .chartBox{
+        width: 33%;
+    }
+    .sectionRight{
+        flex-direction: row;
+        flex-basis: 85%;
+        margin-top: 50px;
+        margin-right: 10px;
+        margin-bottom: 25px;
+    }
+    .rightSideInfo{
+        width: auto;
+    }
+}

@@ -1,9 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { ResponsiveContainer, RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
 
-function RadialChart( score ) {
-  let getScore = score.score.toString()
-  console.log(getScore)
+function RadialChart( props ) {
+  let getScore = props.score.toString()
   let resizeScore = getScore * 100
   const data = [
     {
@@ -12,7 +12,6 @@ function RadialChart( score ) {
       fill: "red"
     }
   ]
-  console.log(data)
   return (
     <div className="chartBox">
       <ResponsiveContainer width="100%">
@@ -28,6 +27,14 @@ function RadialChart( score ) {
       </ResponsiveContainer>
     </div>
   )
+}
+
+
+RadialChart.defaultProps = {
+  score: 0
+}
+RadialChart.propTypes = {
+  score: PropTypes.number.isRequired
 }
 
 export default RadialChart
