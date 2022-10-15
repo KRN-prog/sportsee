@@ -26,11 +26,12 @@ function Home(){
             <section className="sideSection">
                 <Sidebar />
             </section>
-            <div className='greeting'>
-                <h1 className='mainSection__heading'>Bonjour <span className='mainSection__heading--red'>{user.userInfos.firstName}</span></h1>
-                <span className='felicitation'>Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
-            </div>
+            <section className='sectionHide'></section>
             <section className='mainSection'>
+                <div className='greeting'>
+                    <h1 className='mainSection__heading'>Bonjour <span className='mainSection__heading--red'>{user.userInfos.firstName}</span></h1>
+                    <span className='felicitation'>Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
+                </div>
                 <div>
                     <article className='Chart'>
                         <BarCharts activity={userActivity} />

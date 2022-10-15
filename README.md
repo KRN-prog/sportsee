@@ -1,70 +1,45 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
+In this project, you can run:
 
-In the project directory, you can run:
+**For the Sportsee directory**
+## `yarn`
+Run this command to install all the dependensee's for this project
 
-### `npm start`
+### `yarn start`
+Run this command to start the project, this project will normally open itself in your browser.
+If it doesn't open you can go to [http://localhost:3000] to view it in your browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
+The page will reload when you make changes.
 You may also see any lint errors in the console.
 
-### `npm test`
+## React version
+React version: 17.0.2
+React Router version: 5.3.3
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## `yarn add axios`
+This project use axios for the API call's, to add it to the project you need to run this command if it doesn't has been installed with the `yarn` command.
+Axios version: 0.27.2
 
-### `npm run build`
+## `yarn add prop-types`
+This project use prop-types, to for dummy props, to add it to the project you need to run this command if it doesn't has been installed with the `yarn` command.
+Prop-types version: 15.8.1
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## `yarn add recharts`
+This project use recharts for the charts, to add it to the project you need to run this command if it doesn't has been installed with the `yarn` command.
+Recharts version: 2.1.14
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## `yarn add sass`
+This project use SASS, to add it to the project you need to run this command if it doesn't has been installed with the `yarn` command.
+SASS version: 1.54.8
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Mocked data
+The mocked data, are located in the '__Mocks__' directory, mocked data are already imported in the 'GetData.jsx' file, if you want to switch to the data from the API you need to comment the imported json files and actual code in the fetchData function and uncomment the axios import and the code in the fetchData function.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**For the Backend directory**
+### `yarn dev`
+Run this command to open the backend and have access to the REST API.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## API port
+To make the API work you need to run it on the port 4000, then go to the file 'index.js' and change 'const port' from 3000 to 4000.

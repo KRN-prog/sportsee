@@ -65,7 +65,7 @@ main{
 }
 .main{
     display: flex;
-    justify-content: end;
+    //justify-content: space-between;
     flex-wrap: wrap;
 }
 .mainSection{
@@ -74,6 +74,7 @@ main{
     &__heading{
         font-size: 48px;
         font-weight: 500;
+        margin-top: 0;
         line-height: 24px;
         &--red{
             color: #FF0000;
@@ -128,7 +129,7 @@ main{
 .Chart{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 99%;
     height: 300px;
 }
 .BgRadar{
@@ -155,8 +156,11 @@ main{
 }
 
 
+.sectionHide{
+    flex-basis: 145px;
+}
 .sectionRight{
-    flex-basis: 25%;
+    flex-basis: 20%;
     display: flex;
     flex-direction: column;
 }
@@ -230,25 +234,26 @@ main{
 .chartBox{
     width: 30%;
 }
-
 @media screen and (max-width: 1025px) {
     .greeting{
         flex-basis: 85%
     }
     .mainSection{
-        flex-basis: 85%;
+        flex-basis: 64%;
     }
     .chartBox{
         width: 33%;
     }
-    .sectionRight{
-        flex-direction: row;
-        flex-basis: 85%;
-        margin-top: 50px;
-        margin-right: 10px;
-        margin-bottom: 25px;
+    .sectionHide {
+        flex-basis: 140px;
+    }
+    .chartBox {
+        height: 250px;
     }
     .rightSideInfo{
         width: auto;
+    }
+    .radarText{
+        font-size: 8px;
     }
 }

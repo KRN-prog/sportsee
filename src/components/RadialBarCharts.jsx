@@ -2,7 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ResponsiveContainer, RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
 
+
+/**
+ * This function will create a Radial chart element with the score of the user
+ * 
+ * @param {Object} props Object containing the score of the user
+ * @returns {Object} Returning Radial chart element
+ */
 function RadialChart( props ) {
+  console.log(props)
   let getScore = props.score.toString()
   let resizeScore = getScore * 100
   const data = [

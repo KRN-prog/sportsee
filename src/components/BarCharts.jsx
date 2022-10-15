@@ -2,6 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 
+/**
+ * This function will create a custom lengend to put it on the top of the chrt with a custom shape for the legend color and indicator for Poids and Calories
+ * 
+ * 
+ * @param {Object} prop Object that contain the data link to the legend (align,height,layout,...) but the most  important it contain "payload" which is used to display the color of the legend,
+ * the title and the indicator "kg" or "kCal"
+ * 
+ * @returns {Object} Returning the custom legend of the chart
+ */
 function renderLegend ( prop ) {
   return (
     <div className="ChartText">
@@ -10,13 +19,22 @@ function renderLegend ( prop ) {
         prop.payload.map((entry, index) => (
           <div className="valueBox" key={`legend-item-${index}`}>
             <span className={"color"+entry.color.replace('#','')}></span>
-            <span>{entry.value} {entry === "Poids" ? ("(kg)") : ("(kCal)")}</span>
+            <span>{entry.value} {entry.value === "Poids" ? ("(kg)") : ("(kCal)")}</span>
           </div>
         ))
       }
     </div>
   );
 }
+
+/**
+ * This function will create a custom tooltip when you hovering an element of the chart, that contain the weight in "kg" and the number of "kCal" burned
+ * 
+ * 
+ * @param {Boolean} active Boolean to show if a chart element is hovering
+ * @param {Array} payload Array that containing two objects that containing the data of the element that is being hovering
+ * @returns {Object} Returning the custom tooltip when you hovering an element of the chart
+ */
 function CustomToolTip({ active, payload }) {
   if(active){
     return(
@@ -28,6 +46,14 @@ function CustomToolTip({ active, payload }) {
   }
   return null
 }
+
+/**
+ * This function will create a Bar chart element with the sessions activity of the user
+ * 
+ * 
+ * @param {Object} props Object containing the data of the activity of the user
+ * @returns {Object} Returning Bar chart element
+ */
 function BarCharts( props ) {
   const data =
   props.activity.sessions.map(donnees => (
@@ -82,7 +108,6 @@ CustomToolTip.propTypes = {
   active: PropTypes.bool,
   payload: PropTypes.array
 }
-
 
 
 

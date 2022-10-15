@@ -2,6 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts";
 
+
+/**
+ * This function will create a Radar chart element with the performance of the user
+ * 
+ * @param {Object} props Object containing the data of the performance of the user and each kind of performance type (EX: Cardio,Energy,...)
+ * @returns {Object} Returning Radar chart element
+ */
 function Chart( props ) {
   const data =
   props.perf.data.map(donnees => (
@@ -15,8 +22,8 @@ function Chart( props ) {
   return (
     <div className="chartBox">
       <ResponsiveContainer width="100%" className="radarBox">
-        <RadarChart data={data}>
-          <PolarGrid gridType="polygon" polarRadius={[15, 40, 60, 80, 100]} stroke="#fff" radialLines={false}/>
+        <RadarChart data={data} className="radarText">
+          <PolarGrid gridType="polygon" polarRadius={[15, 40, 60, 80, 100]} stroke="#fff" radialLines={false} />
           <PolarAngleAxis dataKey="subject" tick={{fill: '#fff'}} />
           <Radar dataKey="A" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.6} />
         </RadarChart>
