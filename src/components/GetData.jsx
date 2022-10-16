@@ -4,7 +4,7 @@ import user from '../__Mocks__/user.json'
 import activity from '../__Mocks__/activity.json'
 import averageSessions from '../__Mocks__/average-sessions.json'
 import performance from '../__Mocks__/performance.json'
-function GetData(setUser, setUserActivity, setUserAvgSession, setUserPerf, setLoading, setUserScore) {
+function GetData(userID, setUser, setUserActivity, setUserAvgSession, setUserPerf, setLoading, setUserScore) {
     const fetchData = () => {
         setUser(user.data)
         setUserActivity(activity.data)
@@ -16,16 +16,13 @@ function GetData(setUser, setUserActivity, setUserAvgSession, setUserPerf, setLo
             setUserScore(user.data.todayScore)
         }
         setLoading(false)
-        /*
-        const URL = 'http://localhost:4000/user/18'
-        const URLActivity = 'http://localhost:4000/user/18/activity'
-        const URLAvgSessions = 'http://localhost:4000/user/18/average-sessions'
-        const URLPerf = 'http://localhost:4000/user/18/performance'
         
-        const URL = user
-        const URLActivity = activity
-        const URLAvgSessions = averageSessions
-        const URLPerf = performance
+        /*
+        const URL = `http://localhost:4000/user/${userID}`
+        const URLActivity = `http://localhost:4000/user/${userID}/activity`
+        const URLAvgSessions = `http://localhost:4000/user/${userID}/average-sessions`
+        const URLPerf = `http://localhost:4000/user/${userID}/performance`
+
         const getURL = axios.get(URL)
         const getURLActivity = axios.get(URLActivity)
         const getURLAvgSessions = axios.get(URLAvgSessions)
@@ -50,6 +47,7 @@ function GetData(setUser, setUserActivity, setUserAvgSession, setUserPerf, setLo
             })
         )
         */
+        
     }
     useEffect(() => {
         fetchData()

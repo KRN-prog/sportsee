@@ -18,7 +18,7 @@ function Home(){
     const [userAvgSession, setUserAvgSession] = useState([])
     const [userPerf, setUserPerf] = useState([])
     const [userScore, setUserScore] = useState([])
-    GetData(setUser, setUserActivity, setUserAvgSession, setUserPerf, setLoading, setUserScore)
+    GetData(18, setUser, setUserActivity, setUserAvgSession, setUserPerf, setLoading, setUserScore)
     return(loading ? null
         :
         (
