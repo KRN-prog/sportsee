@@ -43,3 +43,4 @@ Run this command to open the backend and have access to the REST API.
 
 ## API port
 To make the API work you need to run it on the port 4000, then go to the file 'index.js' and change 'const port' from 3000 to 4000.
+
